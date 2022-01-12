@@ -4,6 +4,7 @@ from datetime import timedelta
 from airflow import DAG
 from airflow.contrib.operators.postgres_to_gcs_operator import PostgresToGoogleCloudStorageOperator
 
+
 DESTINATION_BUCKET = 'sc-flow-dev-data'
 DESTINATION_DIRECTORY = "transferred"
 
@@ -12,6 +13,7 @@ dag_params = {
     'start_date': datetime(2020, 7, 7),
     'schedule_interval': timedelta(days=1),
 }
+
 
 with DAG(**dag_params) as dag:
     move_results = PostgresToGoogleCloudStorageOperator(
