@@ -12,7 +12,6 @@ from airflow.providers.google.cloud.transfers.local_to_gcs import LocalFilesyste
 import uuid
 import csv
 
-
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
